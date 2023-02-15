@@ -14,6 +14,8 @@
 
     <title>Todo App</title>
 
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
@@ -21,7 +23,8 @@
       <header>
         <h1>Todo</h1>
         <div class="image-container">
-          <img src="images/icon-sun.svg" alt="sun icon" />
+          <img src="images/icon-sun.svg" alt="sun icon" class="sun-icon" />
+          <img src="images/icon-moon.svg" alt="moon icon" class="moon-icon" />
         </div>
       </header>
 
@@ -30,26 +33,26 @@
           type="text"
           placeholder="Create a new todo..."
           aria-label="todo-input"
-          maxlength="35"
+          maxlength="120"
         />
         <div class="input-circle"></div>
       </form>
 
-      <ul class="ul">
+      <div class="list-container">
+        <div class="list"></div>
         <li class="list-bottom">
-          <p><span class="remaining">0</span> items left</p>
+          <p><span class="remaining">0</span> item(s) left</p>
+          <div class="categories">
+            <nav>
+              <ul>
+                <li class="all-list active">All</li>
+                <li class="active-list">Active</li>
+                <li class="completed-list">Completed</li>
+              </ul>
+            </nav>
+          </div>
           <button class="clear">Clear Completed</button>
         </li>
-      </ul>
-
-      <div class="categories">
-        <nav>
-          <ul>
-            <li class="all-list active">All</li>
-            <li class="active-list">Active</li>
-            <li class="completed-list">Completed</li>
-          </ul>
-        </nav>
       </div>
 
       <p class="drag-drop">Drag and drop to reorder list</p>
@@ -58,3 +61,16 @@
     <script src="main.js"></script>
   </body>
 </html>
+
+<!-- what a todo will look like -->
+
+<!-- <div class="list-item">
+  <div class="checkbox-container">
+    <input type="checkbox" class="checkbox" />
+    <img src="images/icon-check.svg" alt="check icon" />
+  </div>
+  <p class="text">Complete Frontend Mentor Challenge</p>
+  <div class="cross-container">
+    <img src="images/icon-cross.svg" alt="cross icon" />
+  </div>
+</div> -->
